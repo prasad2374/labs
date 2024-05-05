@@ -1,0 +1,60 @@
+cal
+cal -j
+cal -m 2
+cal -y 2024
+
+clear
+
+who
+who -q
+who -H
+who -m
+
+date
+date -d "2 days ago"
+date +%d
+date +%d%m%h
+
+cd Desktop/
+ls
+mkdir newfile
+ls
+
+nano sample.txt
+rm sample.txt
+rmdir newfile
+ls
+
+cat > college.txt
+ls
+cat college.txt
+
+cd Desktop/dypiu/
+ls
+
+ls
+cp systemsoftware.txt systemsoftware1.txt
+cp -i systemsoftware.txt systemsoftware2.txt
+
+ls
+grep -i "system" systemsoftware.txt
+grep -r "system" *
+software.txt
+
+cd Desktop/dypiu/
+ls
+
+ls
+mv ss ./dypiu/
+ls
+cd dypiu/
+ls
+
+ls
+mkdir newfile
+ls
+
+nano sample.txt
+rm sample.txt
+rmdir newfile
+ls
