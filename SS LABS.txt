@@ -1,0 +1,340 @@
+1. Addition and subtraction of 2 no.
+
+#!/bin/bash
+
+# Prompt the user to enter the first number
+echo "Enter the first number:"
+read num1
+
+# Prompt the user to enter the second number
+echo "Enter the second number:"
+read num2
+
+# Perform addition
+sum=$((num1 + num2))
+
+# Perform subtraction
+difference=$((num1 - num2))
+
+# Display the results
+echo "Sum: $sum"
+echo "Difference: $difference"
+
+2. Swapping of two nos using the third variable and without the third variable
+
+#!/bin/bash
+
+# Define the two numbers
+num1=10
+num2=20
+
+echo "Before swapping:"
+echo "Number 1: $num1"
+echo "Number 2: $num2"
+
+# Swapping using a third variable
+temp=$num1
+num1=$num2
+num2=$temp
+
+echo "After swapping using a third variable:"
+echo "Number 1: $num1"
+echo "Number 2: $num2"
+
+3. Largest Among 2 numbers.
+
+#!/bin/bash
+
+# Read two numbers from the user
+read -p "Enter the first number: " a
+read -p "Enter the second number: " b
+
+# Find the maximum using conditional statements
+max=$a
+if [ $b -gt $max ]; then
+    max=$b
+fi
+
+echo "The largest number is: $max"
+
+4. Largest among 3 no.
+
+#!/bin/bash
+
+# Read three numbers from the user
+read -p "Enter the first number: " a
+read -p "Enter the second number: " b
+read -p "Enter the third number: " c
+
+# Find the maximum using conditional statements
+max=$a
+if [ $b -gt $max ]; then
+    max=$b
+fi
+if [ $c -gt $max ]; then
+    max=$c
+fi
+
+echo "The largest number is: $max"
+
+5. Shell Script to check whether a given number is a palindrome or not.
+What is palindrome number ?
+= A palindrome is a number that remains the same when its digits are reversed. For example,
+121 is a palindrome, but 123 is not.
+
+#!/bin/bash
+
+echo "Enter a number: "
+read number
+
+reverse=0
+original=$number
+
+while [ $number -ne 0 ]
+do
+    remainder=$((number % 10))
+    reverse=$(($reverse * 10 + $remainder))
+    number=$(($number / 10))
+done
+
+if [ $original -eq $reverse ]
+then
+    echo "Original is a palindrome."
+else
+    echo "Original is not a palindrome."
+fi
+
+6. Shell Script to find the Sum of n numbers using for loop
+Code 
+
+#!/bin/bash
+
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+    read num
+    sum=$(($sum + num))
+    i=$(($i + 1))
+done
+
+echo $sum
+
+7. Shell script to print Fibonacci series.
+
+#!/bin/bash
+
+echo "How many number of terms to be generated?"
+read n
+
+function fibonacci {
+    x=0
+    y=1
+    i=2
+
+    echo "Fibonacci Series up to $n terms:"
+    echo "$x"
+    echo "$y"
+
+    while [ $i -lt $n ]
+    do
+        i=`expr $i + 1`
+        z=`expr $x + $y`
+        echo "$z"
+        x=$y
+        y=$z
+    done
+}
+
+result=`fibonacci $n`
+echo "$result"
+
+8. Shell script to find the factorial of a number using recursion.
+
+#!/bin/bash
+# Recursive factorial function
+factorial() {
+    local num=$1
+
+    # Base case: If num is 0 or 1, return 1
+    if ((num <= 1)); then
+        echo 1
+    else
+        # Recursive call
+        local subfactorial=$(factorial $((num - 1)))
+        echo $((num * subfactorial))
+    fi
+}
+
+# Main program
+echo "Enter a positive integer:"
+read input_num
+
+# Validate input (ensure it's a positive integer)
+if [[ $input_num =~ ^[1-9][0-9]*$ ]]; then
+    result=$(factorial $input_num)
+    echo "Factorial of $input_num is: $result"
+else
+    echo "Invalid input. Please enter a positive integer."
+fi
+
+9. Shell script for string tokenization
+
+#!/usr/bin/bash
+echo "Enter a sentence: "
+read sentence
+IFS =' ' read - ra  tokens <<< "$sentence"
+# Print individual tokens
+echo "Tokens:"
+for token in "${tokens[@]}"; do
+   echo "$token"
+done
+
+
+
+
+AIM: Explain the following commands: 
+
+1.clear 
+
+2.cal 
+
+3.who 
+
+4.date 
+
+5.mkdir 
+
+6.rm 
+
+7.cat
+
+8.cd 
+
+9.cp 
+
+10.grep 
+
+11.ls 
+
+12.mv  
+
+13.rmdir 
+
+
+ TOOLS/APPARATUS: Linux operating system. 3.3
+ Implementing the Solution: 3.3.1
+
+STANDARD PROCEDURES: 
+ 
+3.1 Analyzing the Problem: 
+Start Linux and enter the username and password. Now write startx and after that open the terminal. 
+At the terminal try the different commands and see the output. 
+ 
+3.2 Designing the Solution: 
+At the terminal first perform the command CAL without and with the different options available for it. 
+Like $ cal and then enter. The calendar will be displayed at the terminal. 
+$ cal –m and then enter. In the calendar Monday will be displayed as the first day of the week. 
+Same way perform the other commands like CLEAR, WHO, DATE, MKDIR, RM etc. 
+ 
+1) CAL: 
+At the terminal write the following: [user1@com]$ cal 
+[user1@com]$ cal -m [user1@com]$ cal -j [user1@com]$ cal –y 
+ 
+A screenshot of a computer
+
+Description automatically generated
+ 
+2) CLEAR: 
+At the terminal write the following: [user1@com]$ clear 
+ 
+A black and purple rectangle
+
+Description automatically generated
+ 
+3) WHO: 
+At the terminal write the following: [user1@com]$ who 
+[user1@com]$ who -q [user1@com]$ who -H [user1@com]$ who –m 
+ 
+A screenshot of a computer
+
+Description automatically generated
+ 
+4) DATE: 
+At the terminal write the following: [user1@com]$ date 
+[user1@com]$ date –d “2 days ago” [user1@com]$ date +%D [user1@com]$ date +%d [user1@com]$ date +%d%m%h 
+ 
+A screenshot of a computer
+
+Description automatically generated
+ 
+5) MKDIR and RM: 
+At the terminal write the following: [user1@com]$ cd Desktop/ [user1@com]$ ls 
+[user1@com]$ cd newfiles/ [user1@com]$ ls [user1@com]$ mkdir newfile1  
+[user1@com]$ ls 
+[user1@com]$ rm Sum_Of_Digits.txt [user1@com]$ ls 
+ 
+A screenshot of a computer program
+
+Description automatically generated
+ 
+ 
+6) cat 
+cat allows you to read multiple files and then print them out. You can combine files by using the > operator and append files by using >>. 
+Syntax: cat [argument] [specific file] 
+Example: 
+cat abc.txt 
+If you want to append three files (abc.txt, def.txt, xyz.txt), give the command as, 
+cat abc.txt def.txt xyz.txt > all 
+
+ 
+7) cd, chdir 
+
+cd (or chdir) stands for “change directory”. This command is the key command to move around your file structure. 
+Syntax: cd [name of directory you want to move to] 
+When changing directories, start with / and then type the complete file path, like cd /vvs/abc/xyz 
+ 
+8) cp 
+
+The cp command copies files or directories from one place to another. You can copy a set of files to another file, or copy one or more files under the same name in a directory. If the destination of the file you want to copy is an existing file, then the existing file is overwritten. If the destination is an existing directory, then the file is copied into that directory. 
+Syntax: cp [options] file1 file2 
+If you want to copy the file favourites.html into the directory called laksh, you give the command as: 
+cp favourites.html /vvs/laksh/ 
+A handy option to use with cp is -r. This recursively copies a particular directory and all of its contents to the specified directory, so you won’t have to copy one file at a time. 
+ 
+9) grep 
+
+The grep command searches a file or files for lines that match a provided regular expression (“grep” comes from a command meaning to globally search for a regular expression and then print the found matches). 
+Syntax: grep [options] regular expression [files] 
+To exit this command, type 0 if lines have matched, 1 if no lines match, and 2 for errors. 
+ 
+
+10) ls
+ 
+ls will list all the files in the current directory. If one or more files are given, ls will display the files contained within “name” or list all the files with the same name as “name”. The files can be displayed in a variety of formats using various options. 
+Syntax: ls [options] [names] 
+lsis a command you'll end up using all the time. It simply stands for list. If you are in a directory and you want to know what files and directories are inside that directory, type ls. Sometimes the list of files is very long and it flies past your screen so quickly you miss the file you want. To overcome this problem give the command as shown below: 
+ls | more 
+ 
+11) mv 
+mv moves files and directories. It can also be used to rename files or directories. Syntax: mv [options] source target 
+If you wanted to rename vvs.txt to vsv.txt, you should give the command as: mv vvs.txt vsv.txt 
+After executing this command, vvs.txt would no longer exist, but a file with name vsv.txt would now exist with the same contents. 
+
+12) rm 
+rm removes or deletes files from a directory. Syntax: rm [options] files 
+In order to remove a file, you must have write permission to the directory where the file is located. While removing a which does’t have write permission on, a prompt will come up asking you whether or not you wish to override the write protection. 
+The -r option is very handy and very dangerous. -r can be used to remove a directory and all its contents. If you use the -i option, you can possibly catch some disastrous mistakes because it’ll ask you to confirm whether you really want to remove a file 
+before going ahead and doing it. 
+ 
+13) rmdir 
+rmdirallows you to remove or delete directories but not their contents. A directory must be empty in order to remove it using this command. 
+Syntax: rmdir [options] directories 
+If you wish to remove a directory and all its contents, you should use rm -r. 
+ 
+
